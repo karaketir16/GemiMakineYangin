@@ -1,0 +1,38 @@
+C:\Users\hunter_AMD\Desktop\Yazılım Çalışmaları\C# .NET\A Veri okuma\Data_Okuma\Data_Okuma\bin\Debug\Data_Okuma.exe
+C:\Users\hunter_AMD\Desktop\Yazılım Çalışmaları\C# .NET\A Veri okuma\Data_Okuma\Data_Okuma\bin\Debug\Data_Okuma.pdb
+C:\Users\hunter_AMD\Desktop\Yazılım Çalışmaları\C# .NET\A Veri okuma\Data_Okuma\Data_Okuma\obj\x86\Debug\Data_Okuma.Form1.resources
+C:\Users\hunter_AMD\Desktop\Yazılım Çalışmaları\C# .NET\A Veri okuma\Data_Okuma\Data_Okuma\obj\x86\Debug\Data_Okuma.Properties.Resources.resources
+C:\Users\hunter_AMD\Desktop\Yazılım Çalışmaları\C# .NET\A Veri okuma\Data_Okuma\Data_Okuma\obj\x86\Debug\Data_Okuma.csproj.GenerateResource.Cache
+C:\Users\hunter_AMD\Desktop\Yazılım Çalışmaları\C# .NET\A Veri okuma\Data_Okuma\Data_Okuma\obj\x86\Debug\Data_Okuma.exe
+C:\Users\hunter_AMD\Desktop\Yazılım Çalışmaları\C# .NET\A Veri okuma\Data_Okuma\Data_Okuma\obj\x86\Debug\Data_Okuma.pdb
+C:\Users\karaketir16\Desktop\Data_Okuma\Data_Okuma\bin\Debug\Data_Okuma.exe
+C:\Users\karaketir16\Desktop\Data_Okuma\Data_Okuma\bin\Debug\Data_Okuma.pdb
+C:\Users\karaketir16\Desktop\Data_Okuma\Data_Okuma\obj\x86\Debug\Data_Okuma.csprojAssemblyReference.cache
+C:\Users\karaketir16\Desktop\Data_Okuma\Data_Okuma\obj\x86\Debug\Data_Okuma.Form1.resources
+C:\Users\karaketir16\Desktop\Data_Okuma\Data_Okuma\obj\x86\Debug\Data_Okuma.Properties.Resources.resources
+C:\Users\karaketir16\Desktop\Data_Okuma\Data_Okuma\obj\x86\Debug\Data_Okuma.csproj.GenerateResource.cache
+C:\Users\karaketir16\Desktop\Data_Okuma\Data_Okuma\obj\x86\Debug\Data_Okuma.csproj.CoreCompileInputs.cache
+C:\Users\karaketir16\Desktop\Data_Okuma\Data_Okuma\obj\x86\Debug\Data_Okuma.exe
+C:\Users\karaketir16\Desktop\Data_Okuma\Data_Okuma\obj\x86\Debug\Data_Okuma.pdb
+C:\Users\karaketir16\Desktop\serial\serial\Data_Okuma\bin\Debug\Data_Okuma.exe
+C:\Users\karaketir16\Desktop\serial\serial\Data_Okuma\bin\Debug\Data_Okuma.pdb
+C:\Users\karaketir16\Desktop\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.csprojAssemblyReference.cache
+C:\Users\karaketir16\Desktop\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.Form1.resources
+C:\Users\karaketir16\Desktop\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.Properties.Resources.resources
+C:\Users\karaketir16\Desktop\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.csproj.GenerateResource.cache
+C:\Users\karaketir16\Desktop\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.csproj.CoreCompileInputs.cache
+C:\Users\karaketir16\Desktop\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.exe
+C:\Users\karaketir16\Desktop\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.pdb
+C:\Users\karaketir16\Desktop\serial\serial\Data_Okuma\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\karaketir16\Desktop\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.csproj.CopyComplete
+C:\Users\karaketir16\Desktop\proj\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.csprojAssemblyReference.cache
+C:\Users\karaketir16\Desktop\proj\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.Form1.resources
+C:\Users\karaketir16\Desktop\proj\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.Properties.Resources.resources
+C:\Users\karaketir16\Desktop\proj\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.csproj.GenerateResource.cache
+C:\Users\karaketir16\Desktop\proj\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.csproj.CoreCompileInputs.cache
+C:\Users\karaketir16\Desktop\proj\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.exe
+C:\Users\karaketir16\Desktop\proj\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.pdb
+C:\Users\karaketir16\Desktop\proj\serial\serial\Data_Okuma\bin\Debug\Data_Okuma.exe
+C:\Users\karaketir16\Desktop\proj\serial\serial\Data_Okuma\bin\Debug\Data_Okuma.pdb
+C:\Users\karaketir16\Desktop\proj\serial\serial\Data_Okuma\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\karaketir16\Desktop\proj\serial\serial\Data_Okuma\obj\x86\Debug\Data_Okuma.csproj.CopyComplete
