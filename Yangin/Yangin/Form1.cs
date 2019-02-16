@@ -18,6 +18,8 @@ namespace Yangin
     {
         Label FA1, FA2, TankLevel, EngineRoomFanStop, BilgeWater,
                 FirePump, BilgePump, EngineRoomFan;
+        Label pFA1, pFA2, pTankLevel, pEngineRoomFanStop, pBilgeWater,
+                pFirePump, pBilgePump, pEngineRoomFan;
         string[] ports = SerialPort.GetPortNames();
         Timer timer;
         int cnt = 15;
@@ -51,6 +53,15 @@ namespace Yangin
             FirePump = label21;
             BilgePump = label9;
             EngineRoomFan = label15;
+            pFA1 = label22;
+            pFA2 = label23;
+            //pTankLevel = label11;
+            //pEngineRoomFanStop = label12;
+            //pBilgeWater = pictureBox11;
+            pFirePump = label17;
+            pBilgePump = label18;
+            pEngineRoomFan = label19;
+            resetle();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -61,7 +72,7 @@ namespace Yangin
                 serialPort1.Close();
             }
         }
-
+        /*
         private void timer1_Tick(object sender, EventArgs e)
         {
             try
@@ -91,7 +102,7 @@ namespace Yangin
                 MessageBox.Show(ex.Message);
             }
         }
-
+        */
         private void button1_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("Yaniyosun Fuat Abi");
@@ -133,7 +144,7 @@ namespace Yangin
         }
         void resetle()
         {
-            timer.Stop();
+            if(timer != null)timer.Stop();
             count = cnt;
             button3.Enabled = false;
             button4.Enabled = false;
@@ -141,6 +152,7 @@ namespace Yangin
             button6.Enabled = false;
             //digitalGauge1.Visible = false;
             digitalGauge1.Value = "00";
+            label24.Visible = false;
             FA1.BackColor = Color.LightGray;
             FA2.BackColor = Color.LightGray;
             TankLevel.BackColor = Color.LightGray;
@@ -149,6 +161,14 @@ namespace Yangin
             FirePump.BackColor = Color.LightGray;
             BilgePump.BackColor = Color.LightGray;
             EngineRoomFan.BackColor = Color.Lime;
+            pFA1.BackColor = Color.Lime;
+            pFA2.BackColor = Color.Lime;
+            //pTankLevel.BackColor = Color.LightGray;
+            //pEngineRoomFanStop.BackColor = Color.LightGray;
+            //pBilgeWater.BackColor = Color.LightGray;
+            pFirePump.BackColor = Color.Red;
+            pBilgePump.BackColor = Color.Red;
+            pEngineRoomFan.BackColor = Color.Lime;
         }
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
@@ -171,24 +191,29 @@ namespace Yangin
                     case 1: //yangin1
                         Fire();
                         FA1.BackColor = Color.Red;
+                        pFA1.BackColor = Color.Red;
                         listBox1.Items.Add("yangin1");
                         button5.Enabled = false;
                         button6.Enabled = false;
+                        label24.Visible = true;
                         break;
                     case 2: //fanrun
                         EngineRoomFanStop.BackColor = Color.LightGray;
                         EngineRoomFan.BackColor = Color.Lime;
+                        pEngineRoomFan.BackColor = Color.Lime;
                         break;
                     case 3: //fanstop
                         EngineRoomFanStop.BackColor = Color.Red;
                         EngineRoomFan.BackColor = Color.LightGray;
+                        pEngineRoomFan.BackColor = Color.Red;
                         break;
                     case 4: //pomprun
                         FirePump.BackColor = Color.Lime;
-
+                        pFirePump.BackColor = Color.Lime;
                         break;
                     case 5: //pompstop
                         FirePump.BackColor = Color.LightGray;
+                        pFirePump.BackColor = Color.Red;
                         break;
                     case 6: //count down
                         //inside fire
@@ -196,9 +221,11 @@ namespace Yangin
                     case 7: //yangin2
                         Fire();
                         FA2.BackColor = Color.Red;
+                        pFA2.BackColor = Color.Red;
                         listBox1.Items.Add("yangin2");
                         button5.Enabled = false;
                         button6.Enabled = false;
+                        label24.Visible = true;
                         break;
                     case 8: //reset
                         resetle();
@@ -206,10 +233,12 @@ namespace Yangin
                     case 9: //tahliyerun
                         BilgeWater.BackColor = Color.Red;
                         BilgePump.BackColor = Color.Lime;
+                        pBilgePump.BackColor = Color.Lime;
                         break;
                     case 10: //tahliyestop
                         BilgeWater.BackColor = Color.LightGray;
                         BilgePump.BackColor = Color.LightGray;
+                        pBilgePump.BackColor = Color.Red;
                         break;
 
                 }

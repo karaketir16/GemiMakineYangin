@@ -9,7 +9,7 @@ int yanginPompRole = 4;
 int tahliyePompRole = 10;
 int servoPin = 9;
 int siviTolerans = 500;
-int siviMax = 590;
+int siviMax = 610;
 bool resetmi = false;
 
 
@@ -49,11 +49,11 @@ void siviSensoruKur()
 }
 bool dumanVarmi1()
 {
-  return (analogRead(A0) > 300);
+  return (analogRead(A0) < 100);
 }
 bool dumanVarmi2()
 {
-  return (analogRead(A3) > 300);
+  return (analogRead(A1) < 100);
 }
 void buzzerRun()
 {
@@ -117,7 +117,7 @@ void damperAc()
 }
 void damperKapat()
 {
-  servo.write(60);
+  servo.write(50);
 }
 bool iptalEdildiMi()
 {
@@ -223,15 +223,17 @@ void yaniyosun2()
 void setup() 
 {
   basla();
+  damperveFanAc();
+  dly;
 }
 bool siviSeviyesiAz()
 {
-  if(analogRead(A1) < siviMax)  return true;
+  if(analogRead(A3) < siviMax)  return true;
   return false;
 }
 bool siviSeviyesiCok()
 {
-  if(analogRead(A1) > siviTolerans)  return true;
+  if(analogRead(A3) > siviTolerans)  return true;
   return false;
 }
 void loop() 
@@ -244,12 +246,12 @@ void loop()
     yaniyosun1(); //ok
     resetmi = false;
   }
-//  else if(dumanVarmi2())
-//  {
-//    yangin = true;
-//    yaniyosun2(); //ok
-//    resetmi = false;
-//  }
+  else if(dumanVarmi2())
+  {
+    yangin = true;
+    yaniyosun2(); //ok
+    resetmi = false;
+  }
   if(yangin)
   {
     buzzerRun(); //ok
