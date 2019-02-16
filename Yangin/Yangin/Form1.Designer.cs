@@ -60,6 +60,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.digitalGauge1 = new Syncfusion.Windows.Forms.Gauge.DigitalGauge();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -70,7 +71,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(260, 109);
+            this.label1.Location = new System.Drawing.Point(284, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(508, 46);
             this.label1.TabIndex = 19;
@@ -184,6 +185,7 @@
             this.label7.Size = new System.Drawing.Size(286, 29);
             this.label7.TabIndex = 4;
             this.label7.Text = "Bilge Water Alarm";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -196,7 +198,7 @@
             // label10
             // 
             this.label10.BackColor = System.Drawing.Color.LightGray;
-            this.label10.Location = new System.Drawing.Point(49, 206);
+            this.label10.Location = new System.Drawing.Point(49, 91);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(30, 29);
             this.label10.TabIndex = 23;
@@ -204,7 +206,7 @@
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.LightGray;
-            this.label11.Location = new System.Drawing.Point(49, 168);
+            this.label11.Location = new System.Drawing.Point(49, 129);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(30, 29);
             this.label11.TabIndex = 24;
@@ -212,7 +214,7 @@
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.LightGray;
-            this.label12.Location = new System.Drawing.Point(49, 129);
+            this.label12.Location = new System.Drawing.Point(49, 167);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(30, 29);
             this.label12.TabIndex = 25;
@@ -220,7 +222,7 @@
             // label13
             // 
             this.label13.BackColor = System.Drawing.Color.LightGray;
-            this.label13.Location = new System.Drawing.Point(49, 91);
+            this.label13.Location = new System.Drawing.Point(49, 205);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(30, 29);
             this.label13.TabIndex = 26;
@@ -257,7 +259,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.label16);
@@ -291,7 +295,7 @@
             // 
             // label15
             // 
-            this.label15.BackColor = System.Drawing.Color.LightGray;
+            this.label15.BackColor = System.Drawing.Color.Lime;
             this.label15.Location = new System.Drawing.Point(49, 129);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(30, 29);
@@ -327,6 +331,7 @@
             // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(838, 337);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
@@ -337,6 +342,7 @@
             // 
             // button4
             // 
+            this.button4.Enabled = false;
             this.button4.Location = new System.Drawing.Point(943, 337);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
@@ -359,20 +365,30 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(12, 12);
+            this.button5.Location = new System.Drawing.Point(52, 200);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(123, 23);
             this.button5.TabIndex = 25;
-            this.button5.Text = "button5";
+            this.button5.Text = "Emg. Pump Start";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Enabled = false;
+            this.button6.Location = new System.Drawing.Point(248, 200);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(123, 23);
+            this.button6.TabIndex = 26;
+            this.button6.Text = "Emg. Pump Stop";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1364, 736);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.digitalGauge1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -429,6 +445,7 @@
         private System.Windows.Forms.Button button4;
         private Syncfusion.Windows.Forms.Gauge.DigitalGauge digitalGauge1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
 

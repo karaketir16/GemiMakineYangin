@@ -38,3 +38,7 @@ C:\Users\karaketir16\source\repos\Yangin\Yangin\bin\Debug\Syncfusion.Grid.Window
 C:\Users\karaketir16\source\repos\Yangin\Yangin\obj\Debug\Yangin.csproj.CopyComplete
 C:\Users\karaketir16\source\repos\Yangin\Yangin\bin\Debug\Syncfusion.Gauge.Windows.dll
 C:\Users\karaketir16\source\repos\Yangin\Yangin\bin\Debug\Syncfusion.Gauge.Windows.xml
+C:\Users\karaketir16\source\repos\Yangin\Yangin\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\karaketir16\source\repos\Yangin\Yangin\bin\Debug\Syncfusion.Core.WinForms.dll
+C:\Users\karaketir16\source\repos\Yangin\Yangin\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\karaketir16\source\repos\Yangin\Yangin\bin\Debug\Syncfusion.Core.WinForms.xml

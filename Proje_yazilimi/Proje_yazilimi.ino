@@ -1,14 +1,17 @@
 #include <EEPROM.h>
 #include <Servo.h>
+#define dly delay(150)
 unsigned long old_time;
 int buzzerRole = 2;
-int ikazRole = 4;
+int ikazRole = 8;
 int fanRole = 7;
-int yanginPompRole = 8;
+int yanginPompRole = 4;
 int tahliyePompRole = 10;
 int servoPin = 9;
 int siviTolerans = 500;
+int siviMax = 590;
 bool resetmi = false;
+
 
 
 int yanginyok = 0;
@@ -20,6 +23,8 @@ int pompstop = 5;
 int timer = 6;
 int yanginvar2 = 7;
 int reset = 8;
+int tahliyerun = 9;
+int tahliyestop = 10;
 Servo servo;
 void portBagla()
 {
@@ -70,33 +75,37 @@ void fanRun()
 {
   digitalWrite(fanRole, HIGH);
   Serial.println(fanrun);
-  delay(250);
+  dly;
 }
 void stopFan()
 {
   digitalWrite(fanRole, LOW);
   Serial.println(fanstop);
-  delay(250);
+  dly;
 }
 void yanginPompRun()
 {
   digitalWrite(yanginPompRole, HIGH);
   Serial.println(pomprun);
-  delay(250);
+  dly;
 }
 void stopYanginPomp()
 {
   digitalWrite(yanginPompRole, LOW);
   Serial.println(pompstop);
-  delay(250);
+  dly;
 }
 void tahliyePompRun()
 {
   digitalWrite(tahliyePompRole, HIGH);
+  Serial.println(tahliyerun);
+  dly;
 }
 void stopTahliyePomp()
 {
   digitalWrite(tahliyePompRole, LOW);
+  Serial.println(tahliyestop);
+  dly;
 }
 void servoBagla()
 {
@@ -108,7 +117,7 @@ void damperAc()
 }
 void damperKapat()
 {
-  servo.write(45);
+  servo.write(60);
 }
 bool iptalEdildiMi()
 {
@@ -143,11 +152,20 @@ unsigned long timerStart()
   Serial.println(timer);
   return millis();
 }
+void sifirla()
+{
+  stopBuzzer(); //ok
+  stopIkaz();   //ok
+  stopYanginPomp();
+  damperveFanAc(); //ok
+  arayuzReset(); //ok
+  resetmi = true;
+}
 void bekle()
 {
   old_time = timerStart();
-  delay(250);
-  while((millis() - old_time) < 30000)
+  dly;
+  while((millis() - old_time) < 15000)
   {
       //Serial.println((millis() - old_time)/1000);
       if(iptalEdildiMi())
@@ -160,16 +178,9 @@ void bekle()
 void arayuzReset()
 {
   Serial.println(reset);
-  delay(250);
+  dly;
 }
-void sifirla()
-{
-  stopBuzzer(); //ok
-  stopIkaz();   //ok
-  damperveFanAc(); //ok
-  arayuzReset(); //ok
-  resetmi = true;
-}
+
 bool yanginSensoruCheck()
 {
   return true;
@@ -202,12 +213,12 @@ void basla()
 void yaniyosun1()
 {
   Serial.println(yanginvar1);
-  delay(250);
+  dly;
 }
 void yaniyosun2()
 {
   Serial.println(yanginvar2);
-  delay(250);
+  dly;
 }
 void setup() 
 {
@@ -215,7 +226,7 @@ void setup()
 }
 bool siviSeviyesiAz()
 {
-  if(analogRead(A1) < 630)  return true;
+  if(analogRead(A1) < siviMax)  return true;
   return false;
 }
 bool siviSeviyesiCok()
@@ -226,13 +237,14 @@ bool siviSeviyesiCok()
 void loop() 
 {
   bool yangin = false;
+  resetmi = true;
   if(dumanVarmi1())
   {
     yangin = true;
     yaniyosun1(); //ok
     resetmi = false;
   }
-//  if(dumanVarmi2())
+//  else if(dumanVarmi2())
 //  {
 //    yangin = true;
 //    yaniyosun2(); //ok
@@ -258,7 +270,7 @@ void loop()
         tahliyePompRun(); //ok
         break;
       }
-      delay(250);
+      dly;
     }
     
     while(!resetmi)
@@ -271,7 +283,7 @@ void loop()
         stopBuzzer(); //ok
         break;
       }
-      delay(250);
+      dly;
     }
     while(!resetmi)
     {
@@ -279,10 +291,43 @@ void loop()
     }
     sifirla();
   }
-  else
+//  else
+//  {
+//    Serial.println(yanginyok);
+//  }
+  else if(Serial.available() > 0) //elle pomprun
   {
-    Serial.println(yanginyok);
-  }
+    Serial.readString();
+    yanginPompRun();
+    resetmi = false;
+    while(Serial.available() <= 0 && siviSeviyesiAz())
+    {
 
-  delay(500);
+    }
+    if(Serial.available() > 0)
+    {
+      Serial.readString();
+      resetmi = true;
+    }
+    stopYanginPomp();
+    if(!siviSeviyesiAz()) tahliyePompRun();
+    while(!resetmi)
+    {
+      //Serial.println(analogRead(A1));
+      resetmi = resetlendiMi();
+      if(!siviSeviyesiCok())
+      {
+        stopTahliyePomp(); //ok
+        stopBuzzer(); //ok
+        break;
+      }
+      dly;
+    }
+    while(!resetmi)
+    {
+      resetmi = resetlendiMi();
+    }
+    sifirla();
+  }
+  dly;
 }
