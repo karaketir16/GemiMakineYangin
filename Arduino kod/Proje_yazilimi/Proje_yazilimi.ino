@@ -8,7 +8,7 @@ int fanRole = 13;
 int yanginPompRole = 8;
 int tahliyePompRole = 2;
 int servoPin = 9;
-int siviTolerans = 500;
+int siviTolerans = 150;
 int siviMax = 610;
 bool resetmi = false;
 
